@@ -39,7 +39,6 @@ class User {
     }
 
     public function uitloggen() {
-        session_start();
         session_unset();
         session_destroy();
     }

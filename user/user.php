@@ -1,5 +1,7 @@
 <?php 
 
+session_start();
+
 require "../includes/user-class.php";
 
 if (isset($_POST['uitlogKnop'])) {
