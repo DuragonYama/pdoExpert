@@ -42,6 +42,12 @@ class User {
         session_unset();
         session_destroy();
     }
+
+    public function insertProducten($omschrijving, $prijs, $file) {
+        $sql = "INSERT INTO product (omschrijving, prijs, file) VALUES (:omschrijving, :prijs, :file)";
+        $placeholder = ["omschrijving"=>$omschrijving, "prijs"=>$prijs, "file"=>$file];
+        $this->pdo->execute($sql, $placeholder);
+    }
 }
 
 $User = new User();
