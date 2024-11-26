@@ -1,5 +1,5 @@
 <?php
-require "../includes/user-class.php";
+require "../includes/product.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $omschrijving = $_POST['omschrijving'];
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uploadFilePath = $uploadDir . $fileName;
 
     if (move_uploaded_file($file['tmp_name'], $uploadFilePath)) {
-        $User->insertProducten($omschrijving, $prijs, $uploadFilePath);
+        $Product->insertProducten($omschrijving, $prijs, $uploadFilePath);
         echo "Product successfully added!";
         header("refresh: 3, ../user/insert-user.php");
     } else {
