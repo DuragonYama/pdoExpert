@@ -31,6 +31,7 @@ class User {
             $_SESSION['name'] = $storeInfo['naam'];
             $_SESSION['email'] = $email;
             $_SESSION['password'] = $password;
+            $_SESSION['userID'] = $storeInfo['userID'];
             return true;
         } else {
             echo "Onjuist wachtwoord";

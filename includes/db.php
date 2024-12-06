@@ -4,7 +4,7 @@ class Database {
   
   private $pdo;
 
-    public function __construct($db = "Producten", $user = "root", $pwd = "", $host = "localhost")
+    public function __construct($db = "producten1", $user = "root", $pwd = "", $host = "localhost")
     {
         try {
             $this->pdo = new PDO("mysql:host=$host;dbname=$db", $user, $pwd);
