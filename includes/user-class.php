@@ -25,7 +25,10 @@ class User {
         if (!$storeInfo) {
             echo "Dit email wordt niet gebruikt";
             return false;
-        } 
+        } else {
+            echo "Login gelukt!";
+            header('refresh: 3, url = ../user/user.php');
+        }
 
         if (password_verify($password, $storeInfo['password'])) {
             $_SESSION['name'] = $storeInfo['naam'];

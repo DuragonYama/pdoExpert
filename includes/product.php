@@ -27,6 +27,18 @@ class Product {
         return $storeInfo = $this->pdo->execute($sql)->fetchAll();
         return [];
     }
+
+    public function updateProduct($productID, $omschrijving, $prijs, $file) {
+        $sql = "UPDATE product SET omschrijving = :omschrijving, prijs = :prijs, file = :file WHERE productID = :productID";
+        $placeholder = ["productID" => $productID, "omschrijving" => $omschrijving, "prijs" => $prijs, "file" => $file];
+        $this->pdo->execute($sql, $placeholder);
+    }
+
+    public function deleteProduct($productID) {
+        $sql = "DELETE FROM product WHERE productID = :productID";
+        $placeholder = ["productID" => $productID];
+        $this->pdo->execute($sql, $placeholder);
+    }
 }
 
 $Product = new Product();

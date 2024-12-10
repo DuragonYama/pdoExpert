@@ -3,8 +3,6 @@
 
     if (isset($_POST['knop1'])) {
         $User->login($_POST['email'], $_POST['password']);
-        echo "Login gelukt!";
-        header('refresh: 3, url = user.php');
     }
 ?>
 <!DOCTYPE html>
